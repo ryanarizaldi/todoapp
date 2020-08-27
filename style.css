@@ -1,0 +1,51 @@
+body {
+
+    background-color: #C4C4C4;
+    border: 5px;
+}
+
+.content {
+    background-color: #fff;
+    width: 70vh;
+    height: 100vh;
+    margin: 10px auto;
+    padding: 20px;
+}
+
+input {
+    width: 181px;
+    height: 39px;
+    padding: 12px 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    box-sizing: border-box;
+    background-color: #EFEFEF;
+    border: 1px solid #818181;
+}
+
+button {
+    background-color: #FF6F6F;
+    border: 0;
+    border-radius: 5px;
+    height: 39px;
+    width: 83px;
+    color: white;
+    font-size: 14px;
+    padding: 6px 12px;
+
+}
+
+a .button {
+    text-decoration: none;
+
+}
+
+.daftar-list {
+
+    font-family: roboto;
+    font-style: medium;
+    font-size: 14px;
+    line-height: 16px;
+
+    text-decoration: none;
+}
