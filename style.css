@@ -2,6 +2,7 @@ body {
 
     background-color: #C4C4C4;
     border: 5px;
+    font-family: roboto;
 }
 
 .content {
@@ -9,30 +10,52 @@ body {
     width: 70vh;
     height: 100vh;
     margin: 10px auto;
-    padding: 20px;
+
+}
+
+.tambah-list {
+    padding: 12px;
+}
+
+form {
+    margin-top: 25px;
 }
 
 input {
-    width: 181px;
-    height: 39px;
-    padding: 12px 20px;
+    width: 500px;
+    height: 50px;
+    font-size: 20px;
+    padding: 25px;
     margin-right: 10px;
     margin-left: 10px;
     box-sizing: border-box;
     background-color: #EFEFEF;
     border: 1px solid #818181;
+    border-radius: 10px;
+}
+
+input:hover {
+    background: #afaeae;
 }
 
 button {
     background-color: #FF6F6F;
     border: 0;
-    border-radius: 5px;
-    height: 39px;
-    width: 83px;
+    border-radius: 10px;
+    height: 50px;
+    width: 100px;
     color: white;
-    font-size: 14px;
+    font-size: 20px;
     padding: 6px 12px;
+}
 
+button:hover {
+    background: #DC363A;
+}
+
+button:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 a .button {
@@ -42,10 +65,52 @@ a .button {
 
 .daftar-list {
 
-    font-family: roboto;
+    margin-top: 15px;
     font-style: medium;
-    font-size: 14px;
-    line-height: 16px;
+    font-size: 30px;
+    line-height: 50px;
+    padding: 12px;
+}
 
-    text-decoration: none;
+ul {
+    list-style: none;
+}
+
+.list {
+    background: #FFFFFF;
+
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid;
+    margin: 0px 0px 1px -18px;
+    padding-left: 20px;
+    width: 568px;
+    transition: 0.2s;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    /* display: none; */
+}
+
+
+
+.list i {
+    position: absolute;
+    top: 18%;
+    right: 0;
+    padding-right: 25px;
+    text-decoration: none !important;
+}
+
+.list i:hover {
+    color: #FF6F6F;
+}
+
+.list:hover {
+    padding: 10px;
+    box-shadow: 5px 10px 18px #FF6F6F;
+}
+
+.judul-list {
+    margin-left: 25px;
 }

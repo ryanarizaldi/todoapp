@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Todo App</title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Indexna ryan</title>
-</head>
-
-<body>
+  <body>
     <div class="container">
-        <div class="content">
-            <div class="tambah-list"></div>
-            <input type="text" placeholder="Tambah List">
-            <button type="submit">Tambah</button>
-            <div class="daftar-list">
-                <ul>
-                    <li>List 1</li>
-                    <li>List 2</li>
-                    <li>List 3</li>
-                </ul>
-            </div>
+      <div class="content">
+        <div class="tambah-list">
+          <form id="add-list">
+            <input type="text" maxlength="30" placeholder="Add More List..." />
+            <button>Add</button>
+          </form>
         </div>
+        <div class="judul-list">
+          <h1>What you should do today...</h1>
+        </div>
+        <div class="daftar-list">
+          <ul>
+            <div class="list">
+              <li>List 1</li>
+              <i class="fa fa-trash"></i>
+            </div>
+          </ul>
+        </div>
+      </div>
     </div>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
