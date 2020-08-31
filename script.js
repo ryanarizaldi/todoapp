@@ -32,6 +32,14 @@
 //   document.getElementById("myInput").value = "";
 // }
 
+//remove list when click trash
+const dlt = document.getElementsByClassName("fa-trash");
+for (let i = 0; i < dlt.length; i++) {
+  dlt[i].onclick = function () {
+    let parent = this.parentElement;
+    parent.style.display = "none";
+  };
+}
 // add List
 const addForm = document.forms["add-list"];
 const parent = document.querySelector("ul");
