@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <title>Todo App</title>
-  </head>
 
-  <body>
-    <div class="container">
-      <div class="content">
-        <div class="tambah-list">
-          <form id="add-list">
-            <input type="text" maxlength="30" placeholder="Add More List..." />
-            <button>Add</button>
-          </form>
-        </div>
-        <div class="judul-list">
-          <h1>What you should do today...</h1>
-        </div>
-        <div class="daftar-list">
-          <ul>
-            <div class="list">
-              <li>Doing Nothing</li>
-              <i class="fa fa-trash"></i>
-            </div>
-          </ul>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <title>Todo App</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="tambah-list">
+        <form id="add-list">
+          <input id="addinput" type="text" maxlength="30" placeholder="Add More List..." />
+          <button type="button" id="add">Add</button>
+        </form>
+      </div>
+      <div class="judul-list">
+        <h1>What you should do today...</h1>
+      </div>
+      <div class="daftar-list">
+        <ul id="list">
+          <!-- <div class="list">
+            <li>Doing Nothing</li>
+            <i class="fa fa-trash"></i>
+          </div>
+          <div class="list">
+            <li>Doing Something</li>
+            <i class="fa fa-trash"></i>
+          </div> -->
+        </ul>
       </div>
     </div>
-    <script src="script.js"></script>
-  </body>
+  </div>
+  <script src="script.js"></script>
+</body>
+
 </html>

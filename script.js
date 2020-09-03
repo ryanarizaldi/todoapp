@@ -33,45 +33,87 @@
 // }
 
 //remove list when click trash
-const dlt = document.getElementsByClassName("fa-trash");
-for (let i = 0; i < dlt.length; i++) {
-  dlt[i].onclick = function () {
-    let parent = this.parentElement;
-    parent.style.display = "none";
-  };
-}
-// add List
-const addForm = document.forms["add-list"];
-const parent = document.querySelector("ul");
-addForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-  let value = addForm.querySelector('input[type="text"]').value;
-  // console.log(value);
-  //each element
-  let list = document.createElement("div");
-  let li = document.createElement("li");
-  let trash = document.createElement("i");
-  if (!value) {
-    alert("Add something on input field!");
-  } else {
-    list.classList.add("list");
-    li.textContent = value;
-    trash.classList.add("fa");
-    trash.classList.add("fa-trash");
-    parent.appendChild(list);
-    list.appendChild(li);
-    list.appendChild(trash);
-  }
+// let dlt = document.getElementsByClassName("fa-trash");
+// for (let i = 0; i < dlt.length; i++) {
+//   dlt[i].onclick = function () {
+//     let parent = this.parentElement;
+//     parent.style.display = "none";
+//   };
+// }
+// // add List
+// const addForm = document.forms["add-list"];
+// const parent = document.querySelector("ul");
+// addForm.addEventListener("submit", function (e) {
+//   e.preventDefault();
+//   let value = addForm.querySelector('input[type="text"]').value;
+//   // console.log(value);
+//   //each element
+//   let list = document.createElement("div");
+//   let li = document.createElement("li");
+//   let trash = document.createElement("i");
+//   if (!value) {
+//     alert("Add something on input field!");
+//   } else {
+//     list.classList.add("list");
+//     li.textContent = value;
+//     trash.classList.add("fa");
+//     trash.classList.add("fa-trash");
+//     parent.appendChild(list);
+//     list.appendChild(li);
+//     list.appendChild(trash);
+//   }
 
-  // value.reset();
-  // console.log(list);
+//   addForm.reset();
+//   // value.reset();
+//   // console.log(list);
+// });
+const addForm = document.forms["add-list"];
+let list = [],
+  input = document.getElementById("addinput"),
+  button = document.getElementById("add"),
+  elementList = document.getElementById("list"),
+  editing = false,
+  editindex = null;
+
+button.addEventListener("click", function () {
+  if (!input.value) {
+    alert("You Must Type Something!");
+  } else {
+    const val = input.value;
+    if (editing == false) {
+      list.push(val);
+    } else {
+      list[editindex] = val;
+      editing = false;
+    }
+    printList();
+    addForm.reset();
+  }
 });
 
-// const trs = document.querySelector(".trash");
-// trs.addEventListener("click", function (e) {
-//   confirm("Are you sure you want to delete this thing?");
-// });
+function printList() {
+  // input.reset();
+  elementList.innerHTML = "";
+  list.forEach(function (val, index) {
+    elementList.innerHTML += `<div class="list">
+    <li>${val}</li>
+    <div class="action">
+    <i class="fa fa-pencil" onclick="edit('${val}',${index})"></i>
+    <i class="fa fa-trash" onclick="remove(${index}, event)"></i>
+    </div>
+    </div>`;
+  });
+}
 
-// function selected(item) {
-//   item.prepend((style.backgroundColor = "limegreen"));
-// }
+function edit(val, index) {
+  editing = true;
+  editindex = index;
+  input.value = String(val);
+}
+
+function remove(index, e) {
+  if (confirm(`are you sure you want to delete "${list[index]}" ??`)) {
+    e.target.parentElement.parentElement.remove();
+    list.splice(index, 1);
+  }
+}
